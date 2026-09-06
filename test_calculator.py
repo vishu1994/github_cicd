@@ -10,4 +10,4 @@ def test_multiply():
 
 
 def test_subtract():
-    assert subtract(5, 3) == 100
+    assert subtract(5, 3) == 2
