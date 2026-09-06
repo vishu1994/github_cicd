@@ -17,7 +17,7 @@ jobs:
       
       - name: Show Dummy Secret
         run: |
-          if [ -n "$API_KEY" ]; then
+          if [ -n "$DUMMY_SECRET" ]; then
             echo "Secret is available"
           else
             echo "Secret is missing"
