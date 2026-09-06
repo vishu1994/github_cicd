@@ -3,11 +3,17 @@ name: Python CI
 on:
   pull_request:
 
+env:
+  APP_ENV: dev
+
 jobs:
   run-tests:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Show Environment
+        run: echo "APP ENV : ${APP_ENV}"
+        
       - name: Checkout code
         uses: actions/checkout@v4
       
