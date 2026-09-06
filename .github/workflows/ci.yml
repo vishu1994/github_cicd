@@ -5,6 +5,7 @@ on:
 
 env:
   APP_ENV: dev
+  DUMMY_SECRET: ${{secrets.DUMMY_SECRET}}
 
 jobs:
   run-tests:
@@ -15,7 +16,13 @@ jobs:
         run: echo "APP ENV ${APP_ENV}"
       
       - name: Show Dummy Secret
-        run: echo "DUMMY Secret ${{secrets.DUMMY_SECRET}}"
+        run: |
+          if [ -n "$API_KEY" ]; then
+            echo "Secret is available"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
 
       - name: Checkout code
         uses: actions/checkout@v4
