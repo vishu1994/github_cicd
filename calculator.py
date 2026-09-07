@@ -1,5 +1,4 @@
 def add(a, b):
-    unused_variable = 10
     return a + b
 
 
